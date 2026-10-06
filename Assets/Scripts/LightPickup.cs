@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LightPickup : MonoBehaviour
 {
-    public float duration = 10f;
+    public float duration = 3f;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

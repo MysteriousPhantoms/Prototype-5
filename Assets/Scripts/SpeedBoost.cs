@@ -2,8 +2,8 @@ using UnityEngine;
  
 public class SpeedBoost : MonoBehaviour
 {
-    public float duration = 5f;
-    public float speedBoost = 3f;
+    public float duration = 2f;
+    public float speedBoost = 1f;
  
     private Player2Movement player;
  

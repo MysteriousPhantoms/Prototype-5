@@ -3,8 +3,8 @@ using UnityEngine.Rendering.Universal;
  
 public class LightBoost : MonoBehaviour
 {
-    public float duration = 10f;
-    public float lightIncrease = 2f;
+    public float duration = 3f;
+    public float lightIncrease = 1f;
  
     private Light2D playerLight;
  
