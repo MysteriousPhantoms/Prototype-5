@@ -1,24 +1,30 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
  
 public class LightBoost : MonoBehaviour
 {
     public float duration = 10f;
+    public float lightIncrease = 2f;
+ 
+    private Light2D playerLight;
  
     void Start()
     {
-        Light lightObj = GetComponentInChildren<Light>();
+        playerLight = GetComponentInChildren<Light2D>();
  
-        if(lightObj != null)
-            lightObj.range += 5;
+        if (playerLight != null)
+        {
+            playerLight.pointLightOuterRadius += lightIncrease;
+        }
  
         Destroy(this, duration);
     }
  
-    void OnDestroy()
+    private void OnDestroy()
     {
-        Light lightObj = GetComponentInChildren<Light>();
- 
-        if(lightObj != null)
-            lightObj.range -= 5;
+        if (playerLight != null)
+        {
+            playerLight.pointLightOuterRadius -= lightIncrease;
+        }
     }
 }

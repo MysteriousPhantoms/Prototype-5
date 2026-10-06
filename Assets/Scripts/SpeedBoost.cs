@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpeedBoost : MonoBehaviour
 {
     public float duration = 5f;
+    public float speedBoost = 3f;
  
     private Player2Movement player;
  
@@ -10,14 +11,19 @@ public class SpeedBoost : MonoBehaviour
     {
         player = GetComponent<Player2Movement>();
  
-        player.moveSpeed += 3;
+        if (player != null)
+        {
+            player.moveSpeed += speedBoost;
+        }
  
         Destroy(this, duration);
     }
  
-    void OnDestroy()
+    private void OnDestroy()
     {
-        if(player != null)
-            player.moveSpeed -= 3;
+        if (player != null)
+        {
+            player.moveSpeed -= speedBoost;
+        }
     }
 }
